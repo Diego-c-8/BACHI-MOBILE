@@ -14,6 +14,7 @@ public class ModPeriod extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_period);
+
     }
 
     public void savePeriod(View view) {

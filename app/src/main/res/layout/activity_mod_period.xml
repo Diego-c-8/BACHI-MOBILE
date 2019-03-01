@@ -17,6 +17,7 @@
         android:layout_marginRight="85dp"
         android:layout_marginBottom="50dp"
         android:ems="10"
+        android:hint="Actividad"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/editText_place"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,11 +36,13 @@
         android:layout_marginRight="86dp"
         android:layout_marginBottom="79dp"
         android:ems="10"
+        android:hint="Lugar"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/mod_period_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_name" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_name"
+        tools:text="Lugar" />
 
     <Button
         android:id="@+id/mod_period_button"

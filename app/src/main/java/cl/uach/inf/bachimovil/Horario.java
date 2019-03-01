@@ -43,8 +43,8 @@ public class Horario extends AppCompatActivity {
                         startActivityForResult(intent, 1);
                     }
                 });
-                periods[i][j].setPeriodText();
                 row.addView(periods[i][j]);
+                periods[i][j].setPeriodText();
             }
         }
     }

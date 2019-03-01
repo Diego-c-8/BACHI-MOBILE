@@ -3,6 +3,7 @@ package cl.uach.inf.bachimovil;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.RelativeSizeSpan;
@@ -15,8 +16,8 @@ import android.widget.TextView;
 import static android.content.Context.MODE_PRIVATE;
 
 public class Period extends android.support.v7.widget.AppCompatButton {
-    int id;
-    Context context;
+    private int id;
+    private Context context;
     public Period(Context context, int id) {
         super(context);
         this.context = context;
@@ -26,8 +27,8 @@ public class Period extends android.support.v7.widget.AppCompatButton {
         setLayoutParams(new TableRow.LayoutParams(width, height));
         setId(id);
         setAllCaps(false);
-        //buttons[i][j].setBackgroundColor(0xFFFFFFFF);
-        setBackgroundResource(R.drawable.border);
+        setBackgroundColor(0xFFFFFFFF);
+        //setBackgroundResource(R.drawable.border);
 
     }
 
@@ -38,6 +39,13 @@ public class Period extends android.support.v7.widget.AppCompatButton {
             Spannable span = new SpannableString(name + "\n" + place);
             span.setSpan(new RelativeSizeSpan(0.8f), name.length(), name.length() + place.length() + 1, 0);
             setText(span);
+            int color;
+            switch (name) {
+                case "Algebra": color = 0xFF00FF00; break;
+                case "Lenguaje": color = 0xFFFF0000; break;
+                default: color = 0xFFFFFFFF; break;
+            }
+            setBackgroundColor(color);
 
     }
 }

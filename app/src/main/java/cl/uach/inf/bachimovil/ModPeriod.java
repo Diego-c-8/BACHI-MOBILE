@@ -9,26 +9,39 @@ import android.view.View;
 import android.widget.EditText;
 
 public class ModPeriod extends AppCompatActivity {
+    private int id;
+    private EditText edit1;
+    private EditText edit2;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_period);
 
+        edit1 = (EditText) findViewById(R.id.editText_name);
+        edit2 = (EditText) findViewById(R.id.editText_place);
+
+        intent = getIntent();
+        id = intent.getIntExtra("period", -1);
+
+        SharedPreferences pref = getSharedPreferences("pref_horario", MODE_PRIVATE);
+        String name = pref.getString("period_name" + id, " ");
+        String place = pref.getString("period_place" + id, " ");
+
+        if (name != " ") edit1.setText(name);
+        if (place != " ") edit2.setText(place);
+
     }
 
     public void savePeriod(View view) {
-        EditText edit1 = (EditText) findViewById(R.id.editText_name);
-        EditText edit2 = (EditText) findViewById(R.id.editText_place);
 
-        Intent intent = getIntent();
-        int id = intent.getIntExtra("period", -1);
         String name = edit1.getText().toString();
         String place = edit2.getText().toString();
 
         SharedPreferences.Editor editor = getSharedPreferences("pref_horario", MODE_PRIVATE).edit();
-        editor.putString("period_name" + id, name);
-        editor.putString("period_place" + id, place);
+        editor.putString("period_name" + id, (name.length() != 0 ? name : " "));
+        editor.putString("period_place" + id, (place.length() != 0 ? place : " "));
         editor.commit();
 
         setResult(Activity.RESULT_OK, intent);

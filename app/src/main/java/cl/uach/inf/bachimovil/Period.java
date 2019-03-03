@@ -39,12 +39,9 @@ public class Period extends android.support.v7.widget.AppCompatButton {
             Spannable span = new SpannableString(name + "\n" + place);
             span.setSpan(new RelativeSizeSpan(0.8f), name.length(), name.length() + place.length() + 1, 0);
             setText(span);
-            int color;
-            switch (name) {
-                case "Algebra": color = 0xFF00FF00; break;
-                case "Lenguaje": color = 0xFFFF0000; break;
-                default: color = 0xFFFFFFFF; break;
-            }
+
+            SharedPreferences pref = context.getSharedPreferences("pref_horario", MODE_PRIVATE);
+            int color = pref.getInt(name, 0xFFFFFFFF);
             setBackgroundColor(color);
 
     }

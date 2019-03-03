@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PlanColors"></activity>
         <activity
             android:name=".Main"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
@@ -23,7 +24,7 @@
         <activity android:name=".CursosActivity" />
         <activity android:name=".Horario" />
         <activity android:name=".Calendario" />
-        <activity android:name=".ModPeriod"></activity>
+        <activity android:name=".ModPeriod" />
     </application>
 
 </manifest>

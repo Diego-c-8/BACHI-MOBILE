@@ -6,11 +6,13 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 
 public class ModPeriod extends AppCompatActivity {
     private int id;
-    private EditText edit1;
+    private AutoCompleteTextView edit1;
     private EditText edit2;
     private Intent intent;
 
@@ -19,7 +21,7 @@ public class ModPeriod extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_period);
 
-        edit1 = (EditText) findViewById(R.id.editText_name);
+        edit1 = (AutoCompleteTextView) findViewById(R.id.editText_name);
         edit2 = (EditText) findViewById(R.id.editText_place);
 
         intent = getIntent();
@@ -32,6 +34,10 @@ public class ModPeriod extends AppCompatActivity {
         if (name != " ") edit1.setText(name);
         if (place != " ") edit2.setText(place);
 
+
+        String[] asignaturas = getResources().getStringArray(R.array.asignaturas);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, asignaturas);
+        edit1.setAdapter(adapter);
     }
 
     public void savePeriod(View view) {

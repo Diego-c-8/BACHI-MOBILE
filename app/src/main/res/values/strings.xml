@@ -11,6 +11,24 @@
     <string name="title_foro">Foro</string>
     <string name="title_material">Material</string>
 
+    <!-- Opciones AutoCompleteTextView -->
+    <string-array name="asignaturas">
+        <item>Algebra</item>
+        <item>Lenguaje</item>
+        <item>Geometria</item>
+        <item>Fisica</item>
+        <item>Región de Atacama</item>
+        <item>Región de Coquimbo</item>
+        <item>Región de Valparaíso</item>
+        <item>Región de O\'Higgins</item>
+        <item>Región de Maule</item>
+        <item>Región del Biobío</item>
+        <item>Región de la Araucanía</item>
+        <item>Región de los Ríos</item>
+        <item>Región de los Lagos</item>
+        <item>Región de Aysén</item>
+        <item>Región de Magallanes y Antártica</item>
+    </string-array>
 
     <string name="title_curso1">Geometría</string>
 </resources>

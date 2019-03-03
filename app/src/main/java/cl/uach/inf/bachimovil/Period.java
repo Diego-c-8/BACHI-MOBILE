@@ -40,7 +40,6 @@ public class Period extends android.support.v7.widget.AppCompatButton {
             span.setSpan(new RelativeSizeSpan(0.8f), name.length(), name.length() + place.length() + 1, 0);
             setText(span);
 
-            SharedPreferences pref = context.getSharedPreferences("pref_horario", MODE_PRIVATE);
             int color = pref.getInt(name, 0xFFFFFFFF);
             setBackgroundColor(color);
 

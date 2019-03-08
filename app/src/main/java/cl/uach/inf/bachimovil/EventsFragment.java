@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatImageButton;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -40,7 +42,7 @@ public class EventsFragment extends Fragment implements AsyncResponse
     SwipeRefreshLayout tagRefresher,eventRefresher;
     View view;
     ListView tagList,eventList;
-    Button postButton;
+    AppCompatImageButton postButton;
 
     Intent myIntent;
 

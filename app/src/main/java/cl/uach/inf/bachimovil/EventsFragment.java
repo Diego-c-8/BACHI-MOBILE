@@ -29,22 +29,22 @@ import org.json.JSONObject;
 public class EventsFragment extends Fragment implements AsyncResponse
 {
     // Variables
-    int state = 0; // 0 - Anuncios 1 - Eventos
-    boolean leftMenuOn = false;
-    JSONArray tags = new JSONArray();
-    JSONArray events = new JSONArray();
+    int state = 0; // 0 - Anuncios 1 - Eventos ( Para identificar en que pestaña se está )
+    boolean leftMenuOn = false; // Si se está mostrando el menu lateral (tags)
+    JSONArray tags = new JSONArray(); // Lista de tags
+    JSONArray events = new JSONArray(); // Lista de eventos
     CustomAdapter tagListAdapter;
     EventsAdapter eventListAdapter;
 
     // UI Elements
-    LinearLayout leftMenu;
-    HorizontalScrollView hScroll;
-    SwipeRefreshLayout tagRefresher,eventRefresher;
-    View view;
-    ListView tagList,eventList;
-    AppCompatImageButton postButton;
+    LinearLayout leftMenu; // Menu lateral (tags)
+    HorizontalScrollView hScroll; // Scroll horizontal usado para crear el menú lateral
+    SwipeRefreshLayout tagRefresher,eventRefresher; // Para refrescar resultados deslizando hacia abajo
+    View view; // Vista actual
+    ListView tagList,eventList; // Listas visuales
+    AppCompatImageButton postButton; // Botón para un nuevo post
 
-    Intent myIntent;
+    Intent intent; // Para cargar actividades
 
     // Constructor
     public EventsFragment() {}
@@ -68,6 +68,24 @@ public class EventsFragment extends Fragment implements AsyncResponse
         eventList.setAdapter(eventListAdapter);
 
         postButton = view.findViewById(R.id.PostButton);
+
+        postButton.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+
+                  // Nuevo anuncio
+                  if( state == 0 )
+                      intent = new Intent(getActivity(), AddEventActivity.class );
+
+
+                  // Nuevo evento
+                  else
+                      intent = new Intent(getActivity(), AddEventActivity.class );
+
+
+                  startActivity(intent);
+              }
+          });
 
         tagRefresher.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -187,8 +205,8 @@ public class EventsFragment extends Fragment implements AsyncResponse
                 break;
             case R.id.PostButton:
             {
-                myIntent = new Intent(getActivity(), AddEventActivity.class );
-                startActivity(myIntent);
+                //myIntent = new Intent(getActivity(), AddEventActivity.class );
+                //startActivity(myIntent);
             }
         }
 

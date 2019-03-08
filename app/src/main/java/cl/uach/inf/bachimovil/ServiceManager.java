@@ -45,6 +45,8 @@ public class ServiceManager extends AsyncTask<String,Integer,String> {
 
         super.onPreExecute();
 
+        /*
+
         AlertDialog.Builder builder=new AlertDialog.Builder(activityWeakReference.get());
 
         builder.setTitle(R.string.dialog_wait);
@@ -56,7 +58,7 @@ public class ServiceManager extends AsyncTask<String,Integer,String> {
         alertDialog = builder.create();
 
         alertDialog.show();
-
+        */
     }
 
 
@@ -133,7 +135,7 @@ public class ServiceManager extends AsyncTask<String,Integer,String> {
         try{
             JSONObject jsonObject = new JSONObject(result);
 
-            alertDialog.dismiss();
+            //alertDialog.dismiss();
 
             delegate.obtainServiceResult(jsonObject);
 

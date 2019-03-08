@@ -21,10 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CursosActivity" />
-        <activity
-            android:name=".NuevoEvento"
-            android:label="@string/title_activity_nuevo_evento"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddEventActivity" android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
 
     </application>
 

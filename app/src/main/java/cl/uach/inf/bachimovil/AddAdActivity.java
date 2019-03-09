@@ -36,10 +36,10 @@ import org.json.JSONArray;
 import java.util.Calendar;
 import java.util.List;
 
-public class AddEventActivity extends AppCompatActivity
+public class AddAdActivity extends AppCompatActivity
 {
     // Entradas de texto
-    EditText title, description, tags, date, time;
+    EditText title, description, tags;
 
     // Botón para guardar
     Button save, file;
@@ -52,15 +52,6 @@ public class AddEventActivity extends AppCompatActivity
 
     //Calendario para obtener fecha & hora
     public final Calendar c = Calendar.getInstance();
-
-    //Variables para obtener la fecha
-    final int mes = c.get(Calendar.MONTH);
-    final int dia = c.get(Calendar.DAY_OF_MONTH);
-    final int año = c.get(Calendar.YEAR);
-
-    //Variables para obtener la hora hora
-    final int hora = c.get(Calendar.HOUR_OF_DAY);
-    final int minuto = c.get(Calendar.MINUTE);
 
     // Almacena la lista de archivos
     JSONArray files = new JSONArray();
@@ -76,75 +67,7 @@ public class AddEventActivity extends AppCompatActivity
         // Configuracion inicial de la actividad
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_add_event);
-
-        // Obtiene el input para la fecha
-        date = findViewById(R.id.date);
-
-        // Desactiva el teclado
-        date.setShowSoftInputOnFocus(false);
-        date.setInputType(0);
-
-        // Al hacer click en el input de fecha
-        date.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-
-                // Si se desselecciona
-                if(!b) return;
-
-                // Esconde el teclado
-                InputMethodManager imm = (InputMethodManager) getSystemService(AddEventActivity.INPUT_METHOD_SERVICE);
-                imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-
-                // Crea el seleccionador de fechas
-                DatePickerDialog recogerFecha = new DatePickerDialog(view.getContext(), new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        final int mesActual = month + 1;
-                        String diaFormateado = (dayOfMonth < 10)? "0" + String.valueOf(dayOfMonth):String.valueOf(dayOfMonth);
-                        String mesFormateado = (mesActual < 10)? "0" + String.valueOf(mesActual):String.valueOf(mesActual);
-                        date.setText(diaFormateado + "/" + mesFormateado + "/" + year);
-                    }
-                },año, mes, dia);
-
-                // Lo muestra
-                recogerFecha.show();
-            }
-        });
-
-        // Obtiene el input para la hora
-        time = findViewById(R.id.time);
-
-        // Desactiva el teclado
-        time.setShowSoftInputOnFocus(false);
-        time.setInputType(0);
-
-        // Al hacer click en el input de hora
-        time.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-
-                // Crea el seleccionador de hora
-                TimePickerDialog recogerHora = new TimePickerDialog(view.getContext(), new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        String horaFormateada =  (hourOfDay < 10)? String.valueOf("0" + hourOfDay) : String.valueOf(hourOfDay);
-                        String minutoFormateado = (minute < 10)? String.valueOf("0" + minute):String.valueOf(minute);
-                        String AM_PM;
-                        if(hourOfDay < 12) {
-                            AM_PM = "a.m.";
-                        } else {
-                            AM_PM = "p.m.";
-                        }
-                        time.setText(horaFormateada + ":" + minutoFormateado + " " + AM_PM);
-                    }
-                }, hora, minuto, false);
-
-                // Lo muestra
-                recogerHora.show();
-            }
-        });
+        setContentView(R.layout.activity_add_ad);
 
         // Crea y asigna el adapter a la lista de archivos adjuntos
         fileAdapter = new FileItem();

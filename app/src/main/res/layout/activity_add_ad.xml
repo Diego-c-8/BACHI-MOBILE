@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddEventActivity">
+    tools:context=".AddAdActivity">
 
     <LinearLayout
         android:id="@+id/MainViewLayout"
@@ -21,16 +21,16 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme">
 
-        <TextView
-            android:id="@+id/newEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="Nuevo Evento"
-            android:textColor="#FFF"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/newEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="Nuevo Anuncio"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/cancelButton"
@@ -89,24 +89,6 @@
                     android:inputType="textMultiLine"
                     android:layout_margin="3dp"
                     android:singleLine="false" />
-
-                <EditText
-                    android:id="@+id/date"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:ems="10"
-                    android:hint="Fecha"
-                    android:layout_margin="3dp"
-                    android:inputType="date" />
-
-                <EditText
-                    android:id="@+id/time"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:ems="10"
-                    android:hint="Hora"
-                    android:layout_margin="3dp"
-                    android:inputType="time" />
 
                 <ListView
                     android:id="@+id/fileList"

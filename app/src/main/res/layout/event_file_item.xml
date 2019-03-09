@@ -9,9 +9,10 @@
     <LinearLayout
         android:id="@+id/EventLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:paddingBottom="20px"
+        android:paddingRight="30px"
         android:paddingLeft="30px"
         android:paddingTop="20px">
 
@@ -22,9 +23,11 @@
             android:layout_gravity="left"
             android:gravity="center_vertical"
             android:paddingBottom="3px"
-            android:text="Foto de evento número 1.jpg"
+            android:text="Foto de evento número en la universidad 1.jpg"
             android:textColor="?attr/colorPrimary"
             android:textSize="17sp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:textStyle="bold" />
 
         <ImageButton
@@ -32,9 +35,8 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="right"
-            android:adjustViewBounds="false"
+            android:layout_marginLeft="15dp"
             android:background="@android:color/transparent"
-            android:cropToPadding="false"
             android:tint="?attr/colorError"
             app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 

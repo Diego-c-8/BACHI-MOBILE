@@ -22,6 +22,9 @@
         </activity>
         <activity android:name=".CursosActivity" />
         <activity android:name=".AddEventActivity" android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+        <activity android:name=".AddAdActivity" android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+        <activity android:name=".DisplayEventActivity" android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+
 
     </application>
 

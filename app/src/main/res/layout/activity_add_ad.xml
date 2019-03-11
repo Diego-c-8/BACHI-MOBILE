@@ -60,7 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:ems="10"
-                    android:hint="Nombre del Evento"
+                    android:hint="Nombre del Anuncio"
                     android:inputType="text"
                     android:layout_margin="3dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -74,7 +74,7 @@
                     android:layout_height="120dp"
                     android:gravity="top"
                     android:ems="10"
-                    android:hint="Descripción del Evento"
+                    android:hint="Descripción del Anuncio"
                     android:inputType="textMultiLine"
                     android:layout_margin="3dp"
                     android:singleLine="false" />

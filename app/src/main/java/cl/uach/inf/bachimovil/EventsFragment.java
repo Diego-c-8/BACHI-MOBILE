@@ -209,6 +209,7 @@ public class EventsFragment extends Fragment implements AsyncResponse
 
     public void loadEvents()
     {
+        state = 1;
         eventList.setAdapter(eventListAdapter);
         ServiceManager serviceManager = new ServiceManager(this.getActivity(),new AsyncResponse(){
 
@@ -232,6 +233,7 @@ public class EventsFragment extends Fragment implements AsyncResponse
 
     public void loadAds()
     {
+        state = 0;
         eventList.setAdapter(adsListAdapter);
         ServiceManager serviceManager = new ServiceManager(this.getActivity(),new AsyncResponse(){
 
